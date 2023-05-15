@@ -9,9 +9,14 @@ public class ErrorA {
         names.add("Jane");
         names.add("Mike");
 
-        for (int i = 0; i <= names.size(); i++) {
+        for (int i = 0; i < names.size(); i++) {
             String name = names.get(i);
             System.out.println("Name: " + name);
         }
+
+        // problema de índice devido ao OPERADOR "<=" estava iterando sobre um valor inexistente
+
+        // O código abaixo foi sugerido pela IDE
+        names.stream().map(name -> "Name: " + name).forEach(System.out::println);
     }
 }
